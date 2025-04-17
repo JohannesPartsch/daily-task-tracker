@@ -1,5 +1,6 @@
 import argparse
 from add_task import add_task
+from list_tasks import list_tasks
 
 
 def main():
@@ -28,7 +29,7 @@ def main():
     if args.command == "add":
         add_task(args.title)
     elif args.command == "list":
-        print("📋 Aufgaben auflisten (noch nicht implementiert)")
+        list_tasks()
     elif args.command == "done":
         print("✅ Aufgabe als erledigt markieren (noch nicht implementiert)")
     else:
