@@ -1,6 +1,7 @@
 import argparse
 from add_task import add_task
 from list_tasks import list_tasks
+from mark_done import mark_done
 
 
 def main():
@@ -22,7 +23,8 @@ def main():
     subparsers.add_parser("list", help="List all tasks")
 
     # Done command
-    subparsers.add_parser("done", help="Mark a task as done")
+    done_parser = subparsers.add_parser("done", help="Mark a task as done")
+    done_parser.add_argument("id", type=int, help="ID of the task to mark as done")
 
     args = parser.parse_args()
 
@@ -31,7 +33,7 @@ def main():
     elif args.command == "list":
         list_tasks()
     elif args.command == "done":
-        print("✅ Aufgabe als erledigt markieren (noch nicht implementiert)")
+        mark_done(args.id)
     else:
         parser.print_help()
 
