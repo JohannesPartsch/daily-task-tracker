@@ -1,13 +1,6 @@
-import json
-import os
+from task_storage import load_tasks
 
 TASKS_FILE = "tasks.json"
-
-def load_tasks():
-    if not os.path.exists(TASKS_FILE):
-        return []
-    with open(TASKS_FILE, "r") as f:
-        return json.load(f)
 
 def list_tasks():
     tasks = load_tasks()
