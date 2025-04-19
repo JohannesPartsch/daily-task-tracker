@@ -5,7 +5,10 @@ TASKS_FILE = "tasks.json"
 
 def add_task(title):
     tasks = load_tasks()
-    next_id = max([task["id"] for task in tasks], default=0) + 1
+    used_ids = {task["id"] for task in tasks}
+    next_id = 1
+    while next_id in used_ids:
+        next_id += 1
     new_task = {
         "id": next_id,
         "title": title,
