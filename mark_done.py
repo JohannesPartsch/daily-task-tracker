@@ -6,11 +6,9 @@ def mark_done(task_id):
     tasks = load_tasks()
     for task in tasks:
         if task["id"] == task_id:
-            if task["done"]:
-                print(f"🔁 Aufgabe [{task_id}] ist schon erledigt.")
-            else:
-                task["done"] = True
-                save_tasks(tasks)
-                print(f"✅ Aufgabe [{task_id}] wurde als erledigt markiert.")
+            task["done"] = not task["done"]
+            status = "✅ erledigt" if task["done"] else "↩️ wieder unerledigt"
+            save_tasks(tasks)
+            print(f"{status} Aufgabe [{task_id}] '{task['title']}'")
             return
     print(f"❌ Keine Aufgabe mit ID [{task_id}] gefunden.")

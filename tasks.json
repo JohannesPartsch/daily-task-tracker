@@ -1,22 +1,25 @@
-[
-  {
-    "id": 1,
-    "title": "Git lernen",
-    "done": true
-  },
-  {
-    "id": 3,
-    "title": "Workout",
-    "done": false
-  },
-  {
-    "id": 4,
-    "title": "VS Code shortcuts \u00fcben",
-    "done": false
-  },
-  {
-    "id": 2,
-    "title": "Aufr\u00e4umen",
-    "done": false
-  }
-]
+{
+  "last_opened": "2025-04-21",
+  "tasks": [
+    {
+      "id": 1,
+      "title": "Git lernen",
+      "done": false
+    },
+    {
+      "id": 4,
+      "title": "VS Code shortcuts \u00fcben",
+      "done": false
+    },
+    {
+      "id": 2,
+      "title": "Aufr\u00e4umen",
+      "done": true
+    },
+    {
+      "id": 5,
+      "title": "CLI \u00fcben",
+      "done": false
+    }
+  ]
+}
