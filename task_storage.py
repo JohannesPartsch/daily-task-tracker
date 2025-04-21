@@ -33,7 +33,10 @@ def load_tasks():
         save_data(data)
         print("🔄 Neuer Tag erkannt – Aufgaben wurden zurückgesetzt.")
 
-    return data.get("tasks", [])
+    # 🔀 Aufgaben nach ID sortieren
+    tasks = data.get("tasks", [])
+    tasks.sort(key=lambda task: task.get("id", 0))  # Sortieren nach ID
+    return tasks
 
 def save_tasks(tasks):
     data = {
