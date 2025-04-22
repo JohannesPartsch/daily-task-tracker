@@ -3,6 +3,7 @@ from add_task import add_task
 from list_tasks import list_tasks
 from mark_done import mark_done
 from delete_task import delete_task
+from progress import show_progress  # Import the new function
 
 def main():
     """
@@ -39,6 +40,9 @@ def main():
     delete_parser = subparsers.add_parser("delete", help="Delete a task")
     delete_parser.add_argument("id", type=int, help="ID of the task to delete")
 
+    # Progress command: Displays the progress of completed tasks
+    subparsers.add_parser("progress", help="Show progress of completed tasks")
+
     # Parse the command-line arguments
     args = parser.parse_args()
 
@@ -51,6 +55,8 @@ def main():
         mark_done(args.id)  # Call the function to mark a task as done
     elif args.command == "delete":
         delete_task(args.id)  # Call the function to delete a task
+    elif args.command == "progress":
+        show_progress()  # Call the function to show progress
     else:
         parser.print_help()  # Show help message if no valid command is provided
 
