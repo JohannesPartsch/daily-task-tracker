@@ -1,9 +1,9 @@
 import argparse
-from add_task import add_task
-from list_tasks import list_tasks
-from mark_done import mark_done
-from delete_task import delete_task
-from progress import show_progress  # Import the new function
+from src.tasks.add_task import add_task
+from src.tasks.list_tasks import list_tasks
+from src.tasks.mark_done import mark_done
+from src.tasks.delete_task import delete_task
+from src.tasks.progress import show_progress
 
 def main():
     """

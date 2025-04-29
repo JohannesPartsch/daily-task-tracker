@@ -1,6 +1,4 @@
-from task_storage import load_tasks, save_tasks
-
-TASKS_FILE = "tasks.json"
+from ..utils.task_storage import load_tasks, save_tasks
 
 def mark_done(task_id):
     """

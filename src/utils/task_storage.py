@@ -2,7 +2,7 @@ import json
 import os
 from datetime import date
 
-TASKS_FILE = "tasks.json"
+TASKS_FILE = "data/tasks.json"
 
 def load_tasks():
     """
