@@ -1,4 +1,5 @@
 from ..utils.task_storage import load_tasks, save_tasks
+from ..utils.validation import validate_task_id
 
 def delete_task(task_id):
     """
@@ -6,15 +7,21 @@ def delete_task(task_id):
 
     Args:
         task_id (int): The ID of the task to delete.
+
+    Raises:
+        ValueError: If the task ID is invalid or not found.
     """
     # Load the current list of tasks from storage
     tasks = load_tasks()
 
-    # Iterate through the tasks to find the one with the matching ID
+    # Validate the task ID
+    validate_task_id(tasks, task_id)
+
+    # Find the task and get confirmation
     for task in tasks:
         if task["id"] == task_id:
-            # Ask the user for confirmation before deleting the task
-            confirm = input(f"❗ Are you sure you want to delete Task [{task_id}]? (y/n): ").lower()
+            # Ask for confirmation before deleting
+            confirm = input(f"❗ Are you sure you want to delete Task [{task_id}] '{task['title']}'? (y/n): ").lower()
             if confirm == "y":
                 # Remove the task from the list
                 tasks.remove(task)
@@ -28,6 +35,3 @@ def delete_task(task_id):
                 # Print a cancellation message
                 print("❌ Deletion canceled.")
             return
-
-    # If no task with the given ID is found, print an error message
-    print(f"❌ No task found with ID [{task_id}].")

@@ -1,4 +1,5 @@
 from ..utils.task_storage import load_tasks, save_tasks
+from ..utils.validation import validate_task_id
 
 def mark_done(task_id):
     """
@@ -6,11 +7,17 @@ def mark_done(task_id):
 
     Args:
         task_id (int): The ID of the task to toggle.
+
+    Raises:
+        ValueError: If the task ID is invalid or not found.
     """
     # Load the current list of tasks from storage
     tasks = load_tasks()
 
-    # Iterate through the tasks to find the one with the matching ID
+    # Validate the task ID
+    validate_task_id(tasks, task_id)
+
+    # Find and update the task
     for task in tasks:
         if task["id"] == task_id:
             # Toggle the 'done' status of the task
@@ -25,6 +32,3 @@ def mark_done(task_id):
             # Print a confirmation message
             print(f"{status} Task [{task_id}] '{task['title']}'")
             return
-
-    # If no task with the given ID is found, print an error message
-    print(f"❌ No task found with ID [{task_id}].")

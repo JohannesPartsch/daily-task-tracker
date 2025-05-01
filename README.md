@@ -8,8 +8,14 @@ A simple command-line tool written in Python for managing daily tasks. This tool
 - **List Tasks**: View all tasks with their status, ID, and title.
 - **Mark Tasks as Done**: Toggle the completion status of tasks.
 - **Delete Tasks**: Remove tasks by their ID after confirmation.
+- **Progress Tracking**: View task completion statistics with a visual progress bar.
 - **Daily Reset**: Automatically resets the completion status of tasks at the start of a new day.
-- **Data Persistence**: Tasks are stored in a JSON file (`tasks.json`).
+- **Data Persistence**: Tasks are stored in a JSON file with automatic backup functionality.
+
+## Requirements
+
+- Python 3.6 or higher
+- No additional dependencies required
 
 ## Installation
 
@@ -22,6 +28,17 @@ A simple command-line tool written in Python for managing daily tasks. This tool
    cd daily-task-tracker
    ```
 3. Ensure you have Python 3 installed on your system.
+
+## Project Structure
+
+```
+daily-task-tracker/
+├── src/
+│   ├── tasks/          # Task-related operations
+│   └── utils/          # Utility functions and helpers
+├── data/               # Data storage directory
+└── docs/               # Documentation
+```
 
 ## Usage
 
@@ -64,15 +81,24 @@ python main.py <command> [arguments]
   python main.py delete 1
   ```
 
+- **Show Progress**:
+  ```bash
+  python main.py progress
+  ```
+
 ## File Structure
 
 - `main.py`: Entry point for the CLI application.
-- `add_task.py`: Handles adding new tasks.
-- `list_tasks.py`: Handles displaying tasks.
-- `mark_done.py`: Handles toggling the completion status of tasks.
-- `delete_task.py`: Handles deleting tasks.
-- `task_storage.py`: Manages loading, saving, and resetting tasks in the JSON file.
-- `tasks.json`: Stores the task data persistently.
+- `src/tasks/`: Task management functionality
+  - `add_task.py`: Handles adding new tasks
+  - `list_tasks.py`: Handles displaying tasks
+  - `mark_done.py`: Handles toggling task completion status
+  - `delete_task.py`: Handles deleting tasks
+  - `progress.py`: Handles progress visualization
+- `src/utils/`: Utility functions
+  - `task_storage.py`: Manages loading, saving, and resetting tasks
+  - `validation.py`: Input validation functions
+- `data/tasks.json`: Stores task data persistently
 
 ## Example Output
 
@@ -97,3 +123,35 @@ python main.py <command> [arguments]
 ❗ Are you sure you want to delete Task [1]? (y/n): y
 🗑️ Task [1] has been deleted.
 ```
+
+### Viewing Progress
+```bash
+📊 Task Progress Summary
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+Total Tasks:      5
+Completed:        2 ✅
+Open:             3 🔲
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+Progress: [██████░░░░░░░░░░░░░░] 40.0%
+```
+
+## Error Handling
+
+The application includes comprehensive error handling for:
+- Invalid task IDs
+- Empty or invalid task titles
+- File system errors
+- Data corruption
+- Automatic backup and recovery
+
+## Data Persistence
+
+Tasks are stored in `data/tasks.json` with:
+- Automatic daily reset of completion status
+- Backup creation before saves
+- Automatic recovery from corrupted files
+- UTF-8 encoding support for international characters
+
+## Contributing
+
+Feel free to open issues.

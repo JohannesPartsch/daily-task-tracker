@@ -5,6 +5,7 @@ __pycache__/
 
 # Local development settings
 data/tasks.json
+data/tasks.json.bak
 .env
 
 # Documentation folders that will be used later
@@ -13,7 +14,6 @@ docs/guides/usage.md
 docs/development/contributing.md
 docs/development/architecture.md
 docs/development/code-style.md
-docs/changelog/CHANGELOG.md
 
 # Test coverage
 .coverage

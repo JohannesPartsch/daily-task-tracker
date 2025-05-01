@@ -1,4 +1,5 @@
 from ..utils.task_storage import load_tasks, save_tasks
+from ..utils.validation import validate_task_title
 
 def add_task(title):
     """
@@ -6,7 +7,13 @@ def add_task(title):
 
     Args:
         title (str): The title of the task to be added.
+
+    Raises:
+        ValueError: If the title is invalid.
     """
+    # Validate the title
+    validate_task_title(title)
+
     # Load the current list of tasks from storage
     tasks = load_tasks()
 
@@ -21,7 +28,7 @@ def add_task(title):
     # Create a new task dictionary
     new_task = {
         "id": next_id,
-        "title": title,
+        "title": title.strip(),  # Remove leading/trailing whitespace
         "done": False  # New tasks are not completed by default
     }
 
