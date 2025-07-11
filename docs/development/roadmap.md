@@ -12,9 +12,9 @@
 
 ### 🧪 Tests
 - [ ] `pytest` Unit-Tests schreiben für:
-  - Aufgaben hinzufügen.
-  - Aufgaben als erledigt markieren.
-  - Aufgaben speichern/laden.
+  - [ ] Aufgaben hinzufügen.
+  - [ ] Aufgaben als erledigt markieren.
+  - [ ] Aufgaben speichern/laden.
 
 ## 🌟 Neue Kernfunktionen
 
@@ -34,7 +34,6 @@
   - Tägliche, wöchentliche, monatliche Wiederholungen.
   - Benutzerdefinierte Wiederholungsregeln (z.B. "jeden zweiten Montag").
 - [ ] Ablaufdaten für den "erledigt"-Status.
-- [ ] Zeiterfassung für einzelne Tasks.
 
 ### 🔍 Suchen & Filtern
 - [ ] Filterung nach Status, Priorität oder Fälligkeitsdatum.
@@ -53,11 +52,40 @@
 - [ ] Task-Archiv für abgeschlossene Aufgaben.
 - [ ] Trainingsaufzeichnung mit Übungen als Tasks (inkl. Sätze, Wiederholungen, Kommentare).
 
+### 🎮 Gamification
+- [ ] Einführung von Ranglisten oder Belohnungssystemen für das Erledigen von Aufgaben.
+- [ ] Nutzer können Abzeichen oder Punkte sammeln, um ihre Produktivität zu steigern.
+
+### 🔗 Erweiterte Integrationen
+- [ ] Integration mit Tools wie Google Calendar, Microsoft To-Do oder Notion.
+- [ ] Synchronisierung von Aufgaben über verschiedene Plattformen hinweg.
+
+### 🤖 KI-gestützte Funktionen
+- [ ] Automatische Vorschläge für Priorisierungen oder Gruppierungen.
+- [ ] Intelligente Analysen basierend auf Nutzungsdaten.
+
 ## 📊 Auswertung & Analytics
 
+### 🗓️ Auswertung
 - [ ] Tägliche Auswertung über erledigte und offene Tasks.
 - [ ] Grafische Darstellung des Fortschritts über Zeit.
 - [ ] Prozentuale Auswertung und Punktesystem.
+
+### 📈 Erweiterte Statistiken
+- [ ] Heatmaps zur Visualisierung der täglichen/wöchentlichen Produktivität.
+- [ ] Fortschrittsberichte und personalisierte Einblicke.
+
+### ⏱️ Zeiterfassung & Arbeitszeitmanagement
+- [ ] Zeiterfassung für einzelne Tasks (Start/Stopp, Dauer speichern)
+- [ ] Arbeitszeit unabhängig von Tasks starten/stoppen und später zuordnen
+- [ ] Übersicht über gesamte Arbeitszeit pro Tag/Woche/Monat
+- [ ] Historie und Auswertung der erfassten Zeiten
+- [ ] Zeiteinträge nachträglich bearbeiten oder löschen können
+- [ ] Automatische Pausenerkennung oder Pausenfunktion
+- [ ] Export der Zeiterfassungsdaten (z. B. CSV)
+- [ ] Schnellstart der Zeiterfassung per Shortcut oder Befehl
+- [ ] Zeiterfassung auch ohne direkten Task-Bezug (später zuordnen)
+- [ ] Erinnerungsfunktion für laufende Zeiterfassung
 
 ## 🖥️ Oberflächen & Interaktion
 
@@ -72,6 +100,15 @@
 - [ ] Plattformübergreifende Apps (PC, Apple, Linux, Android).
 - [ ] E-Ink-Unterstützung.
 - [ ] Web-Interface für Online-Synchronisierung.
+- [ ] Eigene Kalenderansicht
+- [ ] Kanban Board
+
+### 🌐 Offline-Modus
+- [ ] Unterstützung für die Nutzung der App ohne Internetverbindung.
+
+### 👥 Team-Kollaboration
+- [ ] Gemeinsames Verwalten von Aufgaben innerhalb eines Teams.
+- [ ] Aufgaben können Teammitgliedern zugewiesen werden.
 
 ## 🌐 Mehrbenutzer & Cloud-Features
 
@@ -79,13 +116,21 @@
 - [ ] Synchronisierung zwischen Geräten ermöglichen.
 - [ ] Online-Konto für Cloud-Speicherung.
 
+## 🔐 Datenschutz & Sicherheit
+
+### 🔒 Verschlüsselung
+- [ ] Verschlüsselung der Datenbank zur Sicherstellung der Privatsphäre.
+- [ ] Sicherheitsprotokolle bei Cloud-Speicher.
+
 ## 💾 Datenspeicherung
 
 - [ ] Export- und Importfunktionen für verschiedene Formate.
 - [ ] Undo-Funktionalität.
+- [ ] Datenverlust bei Updates verhindern
 
 ## 🔧 Entwicklerwerkzeuge
 
 - [ ] Logging und Debugging-Optionen hinzufügen.
 - [ ] Automatisierte Code-Qualitätsprüfungen implementieren.
 - [ ] Continuous Integration einrichten.
+
